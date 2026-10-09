@@ -1,0 +1,2163 @@
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #fafafa;
+  color: #222;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container,
+.home-page {
+  min-height: 100vh;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+  height: 70px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 35px;
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar h2 {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.nav-buttons button {
+  border: none;
+  background: transparent;
+
+  padding: 11px 15px;
+
+  font-size: 15px;
+  color: #222;
+
+  border-radius: 10px;
+
+  transition: 0.2s;
+}
+
+.nav-buttons button:hover {
+  background: #f3f3f3;
+  transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   HOME PAGE
+===================================================== */
+
+.home-page {
+  background: #fafafa;
+  padding-bottom: 60px;
+}
+
+.home-page > h1 {
+  text-align: center;
+  margin: 35px 0 10px;
+  font-size: 30px;
+}
+
+.home-page > h2 {
+  text-align: center;
+  margin: 10px 0 25px;
+  color: #444;
+}
+
+
+/* =====================================================
+   CREATE POST
+===================================================== */
+
+.home-page form {
+  width: 92%;
+  max-width: 600px;
+
+  margin: 20px auto 35px;
+
+  padding: 22px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e5e5;
+  border-radius: 15px;
+
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+}
+
+.home-page form input {
+  width: 100%;
+
+  padding: 13px 15px;
+
+  margin-bottom: 12px;
+
+  border: 1px solid #ddd;
+  border-radius: 9px;
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition: 0.2s;
+}
+
+.home-page form input:focus {
+  border-color: #0095f6;
+  box-shadow: 0 0 0 3px rgba(0, 149, 246, 0.08);
+}
+
+.home-page form button {
+  width: 100%;
+
+  padding: 13px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: #0095f6;
+  color: white;
+
+  font-weight: bold;
+  font-size: 15px;
+
+  transition: 0.2s;
+}
+
+.home-page form button:hover {
+  background: #0077cc;
+}
+
+
+/* =====================================================
+   FEED
+===================================================== */
+
+.feed {
+  width: 92%;
+  max-width: 620px;
+
+  margin: 25px auto;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 22px;
+}
+
+
+/* =====================================================
+   POST CARD
+===================================================== */
+
+.post-card {
+  width: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+
+  transition: 0.2s;
+}
+
+.post-card:hover {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =====================================================
+   POST HEADER
+===================================================== */
+
+.post-header {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 14px 16px;
+}
+
+.post-header strong {
+  font-size: 15px;
+}
+
+
+/* =====================================================
+   PROFILE IMAGE
+===================================================== */
+
+.post-profile-pic {
+  width: 43px;
+  height: 43px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  border: 2px solid #eee;
+}
+
+.default-profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f1f1f1;
+
+  font-size: 22px;
+}
+
+
+/* =====================================================
+   POST IMAGE
+===================================================== */
+
+.post-image {
+  width: 100%;
+
+  max-height: 650px;
+
+  object-fit: cover;
+
+  display: block;
+
+  background: #eee;
+}
+
+
+/* =====================================================
+   POST ACTIONS
+===================================================== */
+
+.post-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 12px 15px 5px;
+}
+
+.post-actions button {
+  border: none;
+  background: transparent;
+
+  padding: 7px 10px;
+
+  border-radius: 8px;
+
+  font-size: 15px;
+
+  transition: 0.2s;
+}
+
+.post-actions button:hover {
+  background: #f3f3f3;
+}
+
+
+/* =====================================================
+   LIKES
+===================================================== */
+
+.likes {
+  margin: 5px 15px;
+
+  font-size: 14px;
+
+  font-weight: bold;
+}
+
+
+/* =====================================================
+   CAPTION
+===================================================== */
+
+.caption {
+  margin: 8px 15px;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+
+/* =====================================================
+   COMMENTS
+===================================================== */
+
+.comments {
+  padding: 3px 15px;
+
+  max-height: 180px;
+
+  overflow-y: auto;
+}
+
+.comment-item {
+  margin-bottom: 8px;
+}
+
+.comment-user {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.comment-user strong {
+  font-size: 14px;
+}
+
+.comment-user button {
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+
+  font-size: 12px;
+}
+
+.comment-text {
+  margin: 3px 0;
+
+  font-size: 14px;
+
+  color: #444;
+}
+
+
+/* =====================================================
+   COMMENT BOX
+===================================================== */
+
+.comment-box {
+  display: flex;
+
+  gap: 8px;
+
+  padding: 13px 15px;
+
+  border-top: 1px solid #eee;
+}
+
+.comment-box input {
+  flex: 1;
+
+  padding: 11px 15px;
+
+  border: 1px solid #ddd;
+
+  border-radius: 22px;
+
+  outline: none;
+}
+
+.comment-box input:focus {
+  border-color: #0095f6;
+}
+
+.comment-box button {
+  border: none;
+
+  padding: 10px 17px;
+
+  background: #0095f6;
+
+  color: white;
+
+  border-radius: 20px;
+
+  font-weight: bold;
+}
+
+.comment-box button:hover {
+  background: #0077cc;
+}
+
+
+/* =====================================================
+   NO POSTS
+===================================================== */
+
+.no-posts {
+  text-align: center;
+
+  padding: 50px;
+
+  color: #777;
+
+  background: white;
+
+  border-radius: 12px;
+}
+
+
+/* =====================================================
+   PROFILE PAGE
+===================================================== */
+
+.profile-page {
+  width: 92%;
+  max-width: 900px;
+
+  margin: 35px auto;
+
+  padding: 20px;
+}
+
+
+/* =====================================================
+   PROFILE HEADER
+===================================================== */
+
+.profile-header {
+  display: flex;
+  align-items: center;
+
+  gap: 60px;
+
+  padding: 35px;
+
+  background: white;
+
+  border: 1px solid #e5e5e5;
+
+  border-radius: 16px;
+
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =====================================================
+   PROFILE PICTURE
+===================================================== */
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  border: 3px solid #ddd;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f2f2f2;
+
+  font-size: 55px;
+}
+
+
+/* =====================================================
+   PROFILE INFO
+===================================================== */
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-info h1 {
+  margin: 0 0 10px;
+
+  font-size: 30px;
+}
+
+.profile-info p {
+  color: #666;
+}
+
+
+/* =====================================================
+   PROFILE STATS
+===================================================== */
+
+.profile-stats {
+  display: flex;
+
+  gap: 45px;
+
+  margin: 25px 0;
+}
+
+.profile-stats div {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.profile-stats strong {
+  font-size: 22px;
+}
+
+.profile-stats span {
+  margin-top: 5px;
+
+  color: #666;
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.edit-profile-btn {
+  border: none;
+
+  border-radius: 8px;
+
+  padding: 10px 18px;
+
+  background: #0095f6;
+
+  color: white;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.edit-profile-btn:hover {
+  background: #0077cc;
+
+  transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   PROFILE POSTS
+===================================================== */
+
+.profile-page > h2 {
+  margin-top: 35px;
+
+  margin-bottom: 15px;
+}
+
+.profile-posts {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 5px;
+}
+
+.profile-post {
+  position: relative;
+
+  aspect-ratio: 1 / 1;
+
+  overflow: hidden;
+
+  background: #eee;
+}
+
+.profile-post img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+.profile-post p {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  margin: 0;
+
+  padding: 10px;
+
+  background: rgba(0, 0, 0, 0.65);
+
+  color: white;
+
+  font-size: 13px;
+}
+
+
+/* =====================================================
+   EDIT PROFILE INPUTS
+===================================================== */
+
+.profile-page input {
+  display: block;
+
+  width: 100%;
+  max-width: 500px;
+
+  padding: 13px 15px;
+
+  margin: 15px auto;
+
+  border: 1px solid #ddd;
+
+  border-radius: 10px;
+
+  font-size: 15px;
+
+  outline: none;
+
+  background: white;
+}
+
+.profile-page input:focus {
+  border-color: #0095f6;
+
+  box-shadow:
+    0 0 0 3px rgba(0, 149, 246, 0.1);
+}
+
+
+/* =====================================================
+   MESSAGES
+===================================================== */
+
+.profile-page h1 {
+  text-align: center;
+
+  margin-bottom: 30px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 700px) {
+
+  .navbar {
+    padding: 0 12px;
+  }
+
+  .navbar h2 {
+    font-size: 19px;
+  }
+
+  .nav-buttons {
+    gap: 2px;
+  }
+
+  .nav-buttons button {
+    padding: 8px;
+
+    font-size: 12px;
+  }
+
+  .home-page form {
+    width: 92%;
+  }
+
+  .feed {
+    width: 95%;
+  }
+
+  .profile-page {
+    width: 95%;
+
+    padding: 10px;
+  }
+
+  .profile-header {
+    flex-direction: column;
+
+    text-align: center;
+
+    gap: 25px;
+
+    padding: 25px 15px;
+  }
+
+  .profile-stats {
+    justify-content: center;
+
+    gap: 25px;
+  }
+
+  .profile-posts {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .post-image {
+    max-height: 500px;
+  }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 450px) {
+
+  .navbar {
+    height: auto;
+
+    min-height: 65px;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    padding: 10px;
+  }
+
+  .nav-buttons {
+    width: 100%;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+  }
+
+  .nav-buttons button {
+    font-size: 11px;
+  }
+
+  .profile-picture {
+    width: 120px;
+    height: 120px;
+  }
+
+  .profile-stats {
+    gap: 18px;
+  }
+
+  .profile-stats strong {
+    font-size: 18px;
+  }
+
+  .comment-box {
+    flex-direction: column;
+  }
+
+  .comment-box button {
+    width: 100%;
+  }
+}
+/* =====================================================
+   INSTAGRAM HOME PAGE
+===================================================== */
+
+.instagram-home {
+  min-height: 100vh;
+  background: #fafafa;
+  display: grid;
+  grid-template-columns: 240px minmax(500px, 630px) 300px;
+  justify-content: center;
+  gap: 35px;
+  padding: 25px 30px;
+}
+
+
+/* =====================================================
+   LEFT SIDEBAR
+===================================================== */
+
+.instagram-sidebar {
+  position: sticky;
+  top: 20px;
+  height: calc(100vh - 40px);
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 18px;
+  padding: 25px 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.instagram-logo {
+  font-family: cursive;
+  font-size: 30px;
+  margin: 0 0 35px 12px;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar-button {
+  position: relative;
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 14px 12px;
+  border-radius: 12px;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.sidebar-button:hover,
+.sidebar-button.active {
+  background: #f2f2f2;
+  font-weight: bold;
+}
+
+.sidebar-badge {
+  position: absolute;
+  right: 12px;
+  background: #ed4956;
+  color: white;
+  border-radius: 20px;
+  padding: 3px 7px;
+  font-size: 11px;
+}
+
+.sidebar-user {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 8px;
+  border-top: 1px solid #eee;
+}
+
+.sidebar-user img,
+.sidebar-user-default {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eee;
+}
+
+.sidebar-user div:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-user small {
+  color: #888;
+  margin-top: 3px;
+}
+
+.sidebar-logout {
+  border: none;
+  background: #fff0f0;
+  color: #d93025;
+  padding: 11px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.instagram-main {
+  width: 100%;
+}
+
+
+/* =====================================================
+   STORIES
+===================================================== */
+
+.stories-card {
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+  padding: 18px;
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+.story {
+  min-width: 70px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.story-avatar {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eee;
+  border: 3px solid #e1306c;
+}
+
+.story-avatar.add-story {
+  background: #111;
+  color: white;
+  font-size: 28px;
+  border: 3px solid #ddd;
+}
+
+.story span {
+  display: block;
+  margin-top: 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* =====================================================
+   CREATE POST
+===================================================== */
+
+.create-post-card {
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 20px;
+}
+
+.create-post-title {
+  margin-bottom: 12px;
+}
+
+.create-post-card form {
+  display: flex;
+  gap: 8px;
+}
+
+.create-post-card input {
+  flex: 1;
+  min-width: 0;
+  padding: 11px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+}
+
+.create-post-card button {
+  border: none;
+  background: #0095f6;
+  color: white;
+  border-radius: 8px;
+  padding: 0 16px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.post-message {
+  margin-bottom: 0;
+  color: #16803c;
+  font-size: 14px;
+}
+
+
+/* =====================================================
+   POST
+===================================================== */
+
+.instagram-post {
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+  margin-bottom: 22px;
+  overflow: hidden;
+}
+
+.instagram-post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 15px;
+}
+
+.post-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.post-user img,
+.post-default-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-button {
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.instagram-post-image {
+  width: 100%;
+  max-height: 650px;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* =====================================================
+   POST ACTIONS
+===================================================== */
+
+.instagram-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px 5px;
+}
+
+.instagram-actions div {
+  display: flex;
+  gap: 14px;
+}
+
+.instagram-actions button {
+  border: none;
+  background: transparent;
+  font-size: 23px;
+  cursor: pointer;
+}
+
+.instagram-likes {
+  padding: 2px 15px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.instagram-caption {
+  padding: 8px 15px;
+  line-height: 1.5;
+}
+
+.instagram-comments {
+  padding: 0 15px 8px;
+}
+
+.instagram-comment {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  font-size: 14px;
+}
+
+.instagram-comment button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.instagram-comment-box {
+  border-top: 1px solid #eee;
+  display: flex;
+  padding: 12px 15px;
+}
+
+.instagram-comment-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.instagram-comment-box button {
+  border: none;
+  background: transparent;
+  color: #0095f6;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   RIGHT SIDEBAR
+===================================================== */
+
+.instagram-right-sidebar {
+  padding-top: 20px;
+}
+
+.current-user-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.current-user-card img,
+.right-default-avatar {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.current-user-card div:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.current-user-card small {
+  color: #999;
+  margin-top: 4px;
+}
+
+.suggestions-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.suggestions-header button {
+  border: none;
+  background: transparent;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.suggestion-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.suggestion-user {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+}
+
+.suggestion-user img,
+.suggestion-default-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.suggestion-user div:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.suggestion-user small {
+  color: #999;
+  margin-top: 3px;
+}
+
+.follow-button,
+.following-button {
+  border: none;
+  background: transparent;
+  color: #0095f6;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.following-button {
+  color: #555;
+}
+
+.instagram-footer {
+  color: #aaa;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+
+/* =====================================================
+   NO POSTS
+===================================================== */
+
+.no-posts-card {
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1100px) {
+  .instagram-home {
+    grid-template-columns: 200px minmax(450px, 600px);
+  }
+
+  .instagram-right-sidebar {
+    display: none;
+  }
+}
+
+@media (max-width: 750px) {
+  .instagram-home {
+    display: block;
+    padding: 10px;
+  }
+
+  .instagram-sidebar {
+    position: static;
+    height: auto;
+    margin-bottom: 15px;
+  }
+
+  .instagram-logo {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .sidebar-menu {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .sidebar-button {
+    min-width: 100px;
+    text-align: center;
+  }
+
+  .sidebar-user,
+  .sidebar-logout {
+    display: none;
+  }
+
+  .create-post-card form {
+    flex-direction: column;
+  }
+
+  .create-post-card button {
+    padding: 11px;
+  }
+}
+/* =====================================================
+   EXPLORE PAGE
+===================================================== */
+
+.explore-page {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.explore-page h1 {
+  margin-bottom: 5px;
+}
+
+.explore-subtitle {
+  color: #777;
+  margin-bottom: 25px;
+}
+
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+}
+
+.explore-post {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  cursor: pointer;
+  background: #eee;
+}
+
+.explore-post img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.2s;
+}
+
+.explore-post:hover img {
+  transform: scale(1.04);
+}
+
+.explore-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.explore-post:hover .explore-overlay {
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+  .explore-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3px;
+  }
+
+  .explore-page {
+    padding: 0 8px;
+  }
+}
+/* =====================================================
+   INSTAGRAM PROFILE PAGE
+===================================================== */
+
+.profile-page {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 25px;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  padding: 30px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  border: 1px solid #ddd;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-info h1 {
+  font-size: 26px;
+  margin: 0 0 12px;
+}
+
+.profile-info > p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.profile-stats {
+  display: flex;
+  gap: 45px;
+  margin: 20px 0;
+}
+
+.profile-stats div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.profile-stats strong {
+  font-size: 20px;
+}
+
+.profile-stats span {
+  color: #666;
+  font-size: 14px;
+}
+
+.edit-profile-btn {
+  border: none;
+  background: #0095f6;
+  color: white;
+  padding: 9px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.edit-profile-btn:hover {
+  background: #0077cc;
+}
+
+
+/* PROFILE POSTS */
+
+.profile-page > h2 {
+  margin: 25px 0 18px;
+}
+
+.profile-posts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+
+.profile-post {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #eee;
+}
+
+.profile-post img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-post p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 13px;
+  opacity: 0;
+  transition: 0.2s;
+}
+
+.profile-post:hover p {
+  opacity: 1;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .profile-page {
+    padding: 0 12px;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .profile-picture {
+    width: 120px;
+    height: 120px;
+  }
+
+  .profile-stats {
+    justify-content: center;
+    gap: 25px;
+  }
+
+  .profile-posts {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
+/* =====================================================
+   MESSAGES PAGE
+===================================================== */
+
+.messages-page {
+  min-height: 100vh;
+  background: #fafafa;
+}
+
+
+/* =====================================================
+   MESSAGES MAIN AREA
+===================================================== */
+
+.messages-page .profile-page {
+  max-width: 950px;
+  margin: 30px auto;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 16px;
+  padding: 25px;
+}
+
+
+/* =====================================================
+   MESSAGES TITLE
+===================================================== */
+
+.messages-page h1 {
+  text-align: center;
+  font-size: 30px;
+  margin: 0 0 25px;
+}
+
+
+/* =====================================================
+   EMPTY CHAT
+===================================================== */
+
+.messages-page .empty-chat {
+  text-align: center;
+  color: #777;
+  padding: 60px 20px;
+  font-size: 16px;
+}
+
+
+/* =====================================================
+   CHAT HEADER
+===================================================== */
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+
+  padding: 15px 18px;
+  margin-bottom: 15px;
+}
+
+.chat-header h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+
+/* =====================================================
+   CHAT MESSAGES
+===================================================== */
+
+.chat-messages {
+  min-height: 350px;
+  max-height: 450px;
+
+  overflow-y: auto;
+
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+
+  padding: 18px;
+
+  background: #fafafa;
+}
+
+
+/* =====================================================
+   MESSAGE ROW
+===================================================== */
+
+.chat-message {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.chat-message.my-message {
+  justify-content: flex-end;
+}
+
+.chat-message.other-message {
+  justify-content: flex-start;
+}
+
+
+/* =====================================================
+   MESSAGE BUBBLE
+===================================================== */
+
+.message-bubble {
+  max-width: 65%;
+
+  padding: 10px 15px;
+
+  border-radius: 18px;
+
+  font-size: 14px;
+
+  word-break: break-word;
+}
+
+.my-message .message-bubble {
+  background: #0095f6;
+  color: #ffffff;
+
+  border-bottom-right-radius: 5px;
+}
+
+.other-message .message-bubble {
+  background: #e9e9e9;
+  color: #222222;
+
+  border-bottom-left-radius: 5px;
+}
+
+
+/* =====================================================
+   MESSAGE TIME
+===================================================== */
+
+.message-time {
+  display: block;
+
+  margin-top: 5px;
+
+  font-size: 10px;
+
+  opacity: 0.65;
+}
+
+
+/* =====================================================
+   DELETE MESSAGE
+===================================================== */
+
+.delete-message-button {
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+
+  font-size: 12px;
+
+  margin-top: 3px;
+
+  opacity: 0.7;
+}
+
+.delete-message-button:hover {
+  opacity: 1;
+}
+
+
+/* =====================================================
+   MESSAGE INPUT
+===================================================== */
+
+.message-input-area {
+  display: flex;
+
+  gap: 10px;
+
+  margin-top: 15px;
+
+  padding: 10px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e5e5;
+
+  border-radius: 14px;
+}
+
+.message-input-area input {
+  flex: 1;
+
+  border: none;
+
+  outline: none;
+
+  padding: 12px;
+
+  font-size: 14px;
+
+  background: transparent;
+}
+
+.message-input-area button {
+  border: none;
+
+  background: #0095f6;
+
+  color: #ffffff;
+
+  padding: 10px 18px;
+
+  border-radius: 10px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.message-input-area button:hover {
+  background: #0077cc;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 750px) {
+
+  .messages-page .profile-page {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  .chat-messages {
+    min-height: 300px;
+  }
+
+  .message-bubble {
+    max-width: 80%;
+  }
+
+  .message-input-area {
+    gap: 5px;
+  }
+
+  .message-input-area button {
+    padding: 10px 12px;
+  }
+
+}
+/* =====================================================
+   MESSAGES PAGE
+===================================================== */
+
+.messages-page {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+
+/* =====================================================
+   MESSAGES CONTAINER
+===================================================== */
+
+.messages-container {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  height: 650px;
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   CHAT USERS / LEFT SIDE
+===================================================== */
+
+.chat-users {
+  border-right: 1px solid #e5e5e5;
+  overflow-y: auto;
+  background: white;
+}
+
+.chat-users h3 {
+  margin: 0;
+  padding: 18px;
+  border-bottom: 1px solid #eee;
+  font-size: 18px;
+}
+
+.chat-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 15px;
+  cursor: pointer;
+  border-bottom: 1px solid #f1f1f1;
+  transition: 0.2s;
+}
+
+.chat-user:hover {
+  background: #f7f7f7;
+}
+
+.chat-user.active {
+  background: #f0f0f0;
+  font-weight: bold;
+}
+
+.chat-user img,
+.chat-user-default {
+  width: 45px;
+  height: 45px;
+  min-width: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #eee;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-user-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.chat-user-info strong {
+  font-size: 14px;
+}
+
+.chat-user-info small {
+  color: #888;
+  margin-top: 3px;
+}
+
+
+/* =====================================================
+   CHAT WINDOW
+===================================================== */
+
+.chat-window {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: #fafafa;
+}
+
+
+/* =====================================================
+   CHAT HEADER
+===================================================== */
+
+.chat-header {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 12px 18px;
+
+  background: white;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.chat-header img,
+.chat-header-default {
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #eee;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-header-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header-info strong {
+  font-size: 15px;
+}
+
+.chat-header-info small {
+  color: #888;
+  margin-top: 3px;
+}
+
+
+/* =====================================================
+   CHAT MESSAGES
+===================================================== */
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+/* =====================================================
+   MESSAGE BUBBLE
+===================================================== */
+
+.message-bubble {
+  max-width: 70%;
+  padding: 10px 14px;
+
+  border-radius: 18px;
+
+  font-size: 14px;
+  line-height: 1.4;
+
+  word-break: break-word;
+}
+
+.message-bubble.sent {
+  align-self: flex-end;
+  background: #0095f6;
+  color: white;
+  border-bottom-right-radius: 5px;
+}
+
+.message-bubble.received {
+  align-self: flex-start;
+  background: #e5e5e5;
+  color: #222;
+  border-bottom-left-radius: 5px;
+}
+
+.message-time {
+  display: block;
+  margin-top: 4px;
+  font-size: 10px;
+  opacity: 0.65;
+}
+
+
+/* =====================================================
+   DELETE MESSAGE BUTTON
+===================================================== */
+
+.message-delete {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  font-size: 12px;
+  padding: 2px;
+  margin-top: 3px;
+}
+
+
+/* =====================================================
+   CHAT INPUT
+===================================================== */
+
+.chat-input-area {
+  display: flex;
+  gap: 10px;
+
+  padding: 12px 15px;
+
+  background: white;
+  border-top: 1px solid #e5e5e5;
+}
+
+.chat-input-area input {
+  flex: 1;
+
+  padding: 12px 15px;
+
+  border: 1px solid #ddd;
+  border-radius: 22px;
+
+  outline: none;
+  font-size: 14px;
+}
+
+.chat-input-area input:focus {
+  border-color: #0095f6;
+}
+
+.chat-input-area button {
+  border: none;
+
+  background: #0095f6;
+  color: white;
+
+  padding: 0 20px;
+
+  border-radius: 22px;
+
+  font-weight: bold;
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.chat-input-area button:hover {
+  background: #0077cc;
+}
+
+
+/* =====================================================
+   NO CHAT SELECTED
+===================================================== */
+
+.no-chat-selected {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  color: #777;
+  padding: 30px;
+}
+
+
+/* =====================================================
+   MESSAGES RESPONSIVE
+===================================================== */
+
+@media (max-width: 850px) {
+
+  .messages-container {
+    grid-template-columns: 220px 1fr;
+    height: 600px;
+  }
+
+  .message-bubble {
+    max-width: 80%;
+  }
+}
+
+
+@media (max-width: 650px) {
+
+  .messages-container {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 600px;
+  }
+
+  .chat-users {
+    max-height: 220px;
+    border-right: none;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .chat-user {
+    padding: 10px 12px;
+  }
+
+  .chat-window {
+    min-height: 450px;
+  }
+
+  .message-bubble {
+    max-width: 85%;
+  }
+
+  .chat-input-area {
+    padding: 10px;
+  }
+
+  .chat-input-area button {
+    padding: 0 15px;
+  }
+}
+
+
+@media (max-width: 450px) {
+
+  .messages-page {
+    padding: 0;
+  }
+
+  .messages-container {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+
+  .chat-messages {
+    padding: 12px;
+  }
+
+  .message-bubble {
+    max-width: 90%;
+    font-size: 13px;
+  }
+
+  .chat-input-area input {
+    padding: 10px 12px;
+  }
+
+  .chat-input-area button {
+    font-size: 13px;
+    padding: 0 13px;
+  }
+}
